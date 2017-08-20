@@ -6,6 +6,7 @@ import leaguehelper.dto.MatchDTO;
 import leaguehelper.dto.MatchReferenceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.TaskScheduler;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,6 +33,7 @@ public class LeagueHelperController {
 
     @RequestMapping(path = (prefix + "/friends"), method = RequestMethod.GET, produces = "application/json")
     @ApiOperation(value = "Get friends ratings")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<FriendRatingDTO> getFriendRatings() {
         return ratingHashMap.values().stream()
                 .filter( r -> r.getGamesPlayed() > 3)

@@ -11,6 +11,7 @@ OpenJDK
 - [nix](http://openjdk.java.net/)
 
 ## Steps
+### Backend
 Set the LOL_HELPER_ACCOUNT_ID environment variable to the account you would like to analyze. This should be a 64 bit
 integer.
 
@@ -32,6 +33,11 @@ If you are having other build issues try
 `mvn clean compile spring-boot:run`
 
 Due to RAPI rate limiting the data will not be fully populated until 1.5s per ranked game you've played this season.
+
+### Frontend
+The frontend is bootstrapped with [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter).
+
+Run `npm start` from `.\leaguehelper\src\main\js` to start the frontend development server.
 
 # Current Features
 
